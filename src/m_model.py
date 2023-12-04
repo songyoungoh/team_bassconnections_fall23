@@ -3,7 +3,7 @@ from aitlas.models import ResNet50MultiLabel
 from aitlas.transforms import ResizeCenterCropFlipHVToTensor, ResizeCenterCropToTensor
 from aitlas.utils import image_loader
 import sys
-from data import prepare_data
+from m_data import prepare_data
 import contextlib
 import yaml
 
@@ -22,6 +22,6 @@ def prepare_model(config):
   return model
 
 if __name__ == "__main__":
-  with open('../config.yaml') as p:
+  with open('/config.yaml') as p:
         config = yaml.safe_load(p)
   resmodel = prepare_model(config)

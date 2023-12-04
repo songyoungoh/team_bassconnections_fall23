@@ -3,12 +3,13 @@ from aitlas.models import ResNet50MultiLabel
 from aitlas.transforms import ResizeCenterCropFlipHVToTensor, ResizeCenterCropToTensor
 from aitlas.utils import image_loader
 import sys
-from data import prepare_data
+from m_data import prepare_data
+from m_model import prepare_model
 import contextlib
 import yaml
 
 # load config file:
-with open('../config.yaml') as p:
+with open('config.yaml') as p:
         config = yaml.safe_load(p)
 
 # prepare the data
@@ -26,7 +27,7 @@ while train_len < 65000:
         run_id= f"size{train_len}",
         train_dataset=train_dataset,
         epochs=config["m_epochs"],
-        model_directory=config["model_directory"], 
+        model_directory=config["m_model_directory"], 
         val_dataset=test_dataset,
     )
     # When data size is big enough, the small increase in data size will not influence the performance

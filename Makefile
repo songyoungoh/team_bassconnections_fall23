@@ -2,14 +2,14 @@
 
 # Mlrsnet
 REPO_URL = https://github.com/DaryLu0v0/MLRSNet.git
-CLONE_PATH = path/to/your/directory
+CLONE_PATH = your/path
 
 mrlsnet_Download:
 	@echo "Cloning MLRSNet repository..."
-	@mkdir -p $(CLONE_PATH)
 	@cd $(CLONE_PATH) && git clone $(REPO_URL)
 	@echo "Unraring files..."
-	@cd $(CLONE_PATH)/MLRSNet/images && for file in *.rar; do unrar e "$$file"; done
+	@python src/unrar.py CLONE_PATH
+	# @cd $(CLONE_PATH)/MLRSNet/Images && for file in *.rar; do unrar e "$$file"; done
 
 mrlsnet_Train_baseline:
 	@echo "Running baseline training..."

@@ -30,7 +30,7 @@ def prepare_data(config):
     return train_dataset, test_dataset
 
 if __name__ == "__main__":
-  with open('../config.yaml') as p:
+  with open('/config.yaml') as p:
         config = yaml.safe_load(p)
   train_dataset, test_dataset = prepare_data(config)
   print("Data size - Training:", len(train_dataset), ", Testing:", len(test_dataset))
