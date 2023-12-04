@@ -48,10 +48,9 @@ model = ResNet50MultiLabel({
 model.prepare()
 
 # Train and evaluate model
-epochs = 20
 model.train_and_evaluate_model(
     train_dataset=train_dataset,
-    epochs=epochs,
+    epochs=config["epochs"],
     model_directory=model_directory,  # Define or load this variable
     val_dataset=test_dataset,
 )
