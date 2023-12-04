@@ -25,3 +25,5 @@ Follow the instruction to install the aitlas.
    * m_model.py: This file is to prepare the model
    * m_train_baseline.py: This file is to train the model as a baseline.
    * m_test_different_size.py: This file is to train the model with data size from 500 to 65000 to test the influence of data size on the deep learning model performance.
+4. Makefile: mrlsnet_Train_baseline: train and test the baseline.
+5. Makefile: mrlsnet_Train_with_different_data_size: train the model by different data sizes.
