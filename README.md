@@ -19,6 +19,11 @@ https://github.com/Evan-xma/aitlas/tree/master
 
 Follow the instructions in the aitlas link to install the environment.
 
+To unrar the data file, install the unrar:
+```
+sudo apt-get install unrar
+```
+
 
 ## Usage
 **mlrsnet:**
