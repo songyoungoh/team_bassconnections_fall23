@@ -28,6 +28,6 @@ model.prepare()
 model.train_and_evaluate_model(
     train_dataset=train_dataset,
     epochs=config["m_epochs"],
-    model_directory=config["model_directory"],  # Define or load this variable
+    model_directory=config["model_directory"], 
     val_dataset=test_dataset,
 )
