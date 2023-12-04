@@ -13,7 +13,7 @@ with open('../config.yaml') as p:
         config = yaml.safe_load(p)
 
 # preprocessing the data
-
+# for the train data
 train_dataset = MLRSNetMultiLabelDataset({
     "batch_size": config["m_batch_size"],
     "shuffle": config["m_shuffle"],
@@ -22,9 +22,7 @@ train_dataset = MLRSNetMultiLabelDataset({
     "csv_file": config["m_train_csv_file"]
 })
 train_dataset.transform = ResizeCenterCropFlipHVToTensor()
-
-# Use parameters from config for test dataset
-# Note: Assuming similar parameters for the test dataset, adjust if needed
+# for the test data
 test_dataset = MLRSNetMultiLabelDataset({
     "batch_size": config["m_batch_size"],
     "shuffle": config["m_shuffle"],
