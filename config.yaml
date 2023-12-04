@@ -1,0 +1,16 @@
+# config about the data
+
+# for mlrs_net
+"m_batch_size": 64,
+"m_shuffle": True,
+"m_num_workers": 4,
+"m_data_dir": "/data/scratch/public/mlrsnet/data/Images",
+"m_train_csv_file": "/data/scratch/public/mlrsnet/data/mlrsnet_train.csv"
+"m_test_csv_file": "/data/scratch/public/mlrsnet/data/mlrsnet_test.csv"
+
+# config about the model
+"m_learning_rate": 0.0001,
+"m_pretrained": true,
+"m_threshold": 0.5,
+"m_epochs": 20,
+"m_metrics": ["accuracy", "precision", "recall", "f1_score"]
