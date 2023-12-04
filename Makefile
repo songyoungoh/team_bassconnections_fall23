@@ -4,7 +4,7 @@
 REPO_URL = https://github.com/DaryLu0v0/MLRSNet.git
 CLONE_PATH = your/path
 
-mrlsnet_Download:
+mlrsnet_Download:
 	@echo "Cloning MLRSNet repository..."
 	@cd $(CLONE_PATH) && git clone $(REPO_URL)
 	@echo "Unraring files..."
