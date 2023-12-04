@@ -27,7 +27,7 @@ sudo apt-get install unrar
 
 ## Usage
 **MLRSNet:**
-1. To download the data, run the make mrlsnet_Download.
+1. To download the data, run the make mlrsnet_Download.
 2. To do EDA, use 'mlrsnet_eda.ipynb' in the 'notebooks' folder. This would give you a good sense of the mlrsnet data.
 3. After doing EDA, use Python files in 'src' folder to train and evaluate a model.
    * m_data.py: This file reads the dataset from the given specified directory and returns dataloaders.
@@ -35,7 +35,7 @@ sudo apt-get install unrar
    * m_train_baseline.py: This file is to train the model as a baseline.
    * m_test_different_size.py: This file is to train the model with data size from 500 to 65000 to test the influence of data size on the deep learning model performance.
 4. make mrlsnet_Train_baseline: train and test the baseline.
-5. make mrlsnet_Train_with_different_data_size: train the model by different data sizes.
+5. make mrlsnet_Train_with_different_data_size: train the model by different data sizes. After that, use mlrsnet_eval.ipynb to visualize the results.
 
 **Brazilian Coffee Scenes:**
 1. To perform EDA, use 'BrazilianCoffeeEDA.ipynb' in the 'notebooks' folder. This shows the distribution of the data.
