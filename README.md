@@ -2,7 +2,7 @@
 We are the Bass Connections Team working on tracking climate change with satellites and artificial intelligence at Duke University. This repository provides an image classification model using PyTorch. It utilizes a ResNet-50 architecture and is trained on the 3 different datasets: MlrsNet, FloodNet, and Brazilian Coffee Scenes.
 
 ## Dataset
-**mlrsnet: https://github.com/cugbrs/MLRSNet**
+**MLRSNet: https://github.com/cugbrs/MLRSNet**
 
 MLRSNet provides different perspectives of the world captured from satellites. That is, it is composed of high spatial resolution optical satellite images. MLRSNet contains 109,161 remote sensing images that are annotated into 46 categories, and the number of sample images in a category varies from 1,500 to 3,000. The images have a fixed size of 256×256 pixels with various pixel resolutions (~10m to 0.1m). Moreover, each image in the dataset is tagged with several of 60 predefined class labels, and the number of labels associated with each image varies from 1 to 13.
 In the data folder, we provided our train, validation, test split CSV file
@@ -26,7 +26,7 @@ sudo apt-get install unrar
 
 
 ## Usage
-**mlrsnet:**
+**MLRSNet:**
 1. To download the data, run the make mrlsnet_Download.
 2. To do EDA, use 'mlrsnet_eda.ipynb' in the 'notebooks' folder. This would give you a good sense of the mlrsnet data.
 3. After doing EDA, use Python files in 'src' folder to train and evaluate a model.
