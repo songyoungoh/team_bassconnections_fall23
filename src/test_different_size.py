@@ -15,16 +15,9 @@ with open('../config.yaml') as p:
 train_dataset, test_dataset = prepare_data(config)
 
 # prepare the model
-model_directory = "/data/scratch/public/mlrsnet/model"
-model = ResNet50MultiLabel({
-    "num_classes": 60, # mlrsnet has 60 different classes
-    "learning_rate": config["m_learning_rate"],
-    "pretrained": config["m_pretrained"],
-    "threshold": config["m_threshold"],
-    "metrics": config["m_metrics"]
-})
-model.prepare()
+model = prepare_model(config)
 
+# train the model for different data size
 train_len = 500
 while train_len < 65000:
     print("---------------------------------------------------Training Length:",train_len)
@@ -36,6 +29,7 @@ while train_len < 65000:
         model_directory=config["model_directory"], 
         val_dataset=test_dataset,
     )
+    # When data size is big enough, the small increase in data size will not influence the performance
     if train_len < 2000:
         train_len += 1000
     elif train_len < 6000: 
