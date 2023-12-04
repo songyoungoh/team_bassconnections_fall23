@@ -1,13 +1,13 @@
 # Run the project
 
-mrlsnet:
+#mrlsnet
 mrlsnet_Download:
 	cd path/to/your/directory
 	git clone https://github.com/DaryLu0v0/MLRSNet.git
 	cd images
 	for file in *.rar; do unrar e "$file"; done
 
-Train_baseline:
+mrlsnet_Train_baseline:
 	python src/m_train_baseline.py
-Train_with_different_data_size:
+mrlsnet_Train_with_different_data_size:
 	python src/m_test_different_size.py
