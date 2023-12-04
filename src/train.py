@@ -6,44 +6,52 @@ import sys
 import contextlib
 import yaml
 
-train_dataset_config = {
-    "batch_size": 64,
-    "shuffle": True,
-    "num_workers": 4,
-    "data_dir": "/data/scratch/public/mlrsnet/data/Images",
-    "csv_file": "/data/scratch/public/mlrsnet/data/mlrsnet_train.csv"
-}
+# this is for the code to train the model as a base line.
 
-train_dataset = MLRSNetMultiLabelDataset(train_dataset_config)
-train_dataset.transform = ResizeCenterCropFlipHVToTensor() 
+# load config file:
+with open('../config.yaml') as p:
+        config = yaml.safe_load(p)
 
-test_dataset_config = {
-    "batch_size": 64,
-    "shuffle": False,
-    "num_workers": 4,
-    "data_dir": "/data/scratch/public/mlrsnet/data/Images",
-    "csv_file": "/data/scratch/public/mlrsnet/data/mlrsnet_test.csv",
-    "transforms": ["aitlas.transforms.ResizeCenterCropToTensor"]
-}
+# preprocessing the data
 
-test_dataset = MLRSNetMultiLabelDataset(test_dataset_config)
-print("data size:", len(train_dataset), len(test_dataset))
+train_dataset = MLRSNetMultiLabelDataset({
+    "batch_size": config["batch_size"],
+    "shuffle": config["shuffle"],
+    "num_workers": config["num_workers"],
+    "data_dir": config["data_dir"],
+    "csv_file": config["train_csv_file"]
+})
+train_dataset.transform = ResizeCenterCropFlipHVToTensor()
 
-epochs = 20
-model_config = {
-    "num_classes": 60, 
-    "learning_rate": 0.001,
-    "pretrained": False, 
-    "threshold": 0.5, 
-    "metrics": ["accuracy", "precision", "recall", "f1_score"]
-}
-model = ResNet50MultiLabel(model_config)
+# Use parameters from config for test dataset
+# Note: Assuming similar parameters for the test dataset, adjust if needed
+test_dataset = MLRSNetMultiLabelDataset({
+    "batch_size": config["batch_size"],
+    "shuffle": config["shuffle"],
+    "num_workers": config["num_workers"],
+    "data_dir": config["data_dir"],
+    "csv_file": config["test_csv_file"]
+})
+test_dataset.transform = ResizeCenterCropToTensor()
+
+# Print dataset sizes
+print("Data size - Training:", len(train_dataset), ", Testing:", len(test_dataset))
+
+# Prepare the model
+model = ResNet50MultiLabel({
+    "num_classes": 60,  # Assuming 60 classes, change if different
+    "learning_rate": config["learning_rate"],
+    "pretrained": config["pretrained"],
+    "threshold": config["threshold"],
+    "metrics": config["metrics"]
+})
 model.prepare()
+
+# Train and evaluate model
+epochs = 20
 model.train_and_evaluate_model(
     train_dataset=train_dataset,
     epochs=epochs,
-    model_directory=model_directory,
+    model_directory=model_directory,  # Define or load this variable
     val_dataset=test_dataset,
-    train_subset_size = train_len,
-    run_id= f"size{train_len}",
 )
