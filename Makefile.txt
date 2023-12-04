@@ -1,11 +1,13 @@
 # Run the project
-Download:
-	python src/data.py
-# you may need unzip the file after downloading the file
 
-Run all after downloading data:
-	python src/run.py
-Train:
-	python src/model.py
-Eval:
-	python src/eval.py
+mrlsnet:
+mrlsnet_Download:
+	cd path/to/your/directory
+	git clone https://github.com/DaryLu0v0/MLRSNet.git
+	cd images
+	for file in *.rar; do unrar e "$file"; done
+
+Train_baseline:
+	python src/m_train_baseline.py
+Train_with_different_data_size:
+	python src/m_test_different_size.py
