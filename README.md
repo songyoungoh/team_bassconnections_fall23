@@ -18,7 +18,7 @@ Follow the instruction to install the aitlas.
 
 ## Usage
 **mlrsnet:**
-1. To download the data, read the Makefile: mrlsnet_Download.
+1. To download the data, run the Makefile: mrlsnet_Download.
 2. To do EDA, use 'mlrsnet_eda.ipynb' in the 'notebooks' folder. This would give you a good sense of the mlrsnet data.
 3. After doing EDA, use python files in 'src' folder to train and evaluate a model.
    * m_data.py: This file is to read the dataset from the given specified directory and return dataloaders along with dataset sizes.
