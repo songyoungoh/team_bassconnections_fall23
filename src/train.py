@@ -3,37 +3,16 @@ from aitlas.models import ResNet50MultiLabel
 from aitlas.transforms import ResizeCenterCropFlipHVToTensor, ResizeCenterCropToTensor
 from aitlas.utils import image_loader
 import sys
+from data import prepare_data
 import contextlib
 import yaml
 
-# this is for the code to train the model as a base line.
+# This is for the code to train the model as a baseline.
 
 # load config file:
 with open('../config.yaml') as p:
         config = yaml.safe_load(p)
-
-# preprocessing the data
-# for the train data
-train_dataset = MLRSNetMultiLabelDataset({
-    "batch_size": config["m_batch_size"],
-    "shuffle": config["m_shuffle"],
-    "num_workers": config["m_num_workers"],
-    "data_dir": config["m_data_dir"],
-    "csv_file": config["m_train_csv_file"]
-})
-train_dataset.transform = ResizeCenterCropFlipHVToTensor()
-# for the test data
-test_dataset = MLRSNetMultiLabelDataset({
-    "batch_size": config["m_batch_size"],
-    "shuffle": config["m_shuffle"],
-    "num_workers": config["m_num_workers"],
-    "data_dir": config["m_data_dir"],
-    "csv_file": config["m_test_csv_file"]
-})
-test_dataset.transform = ResizeCenterCropToTensor()
-
-# Print dataset sizes
-print("Data size - Training:", len(train_dataset), ", Testing:", len(test_dataset))
+train_dataset, test_dataset = prepare_data(config)
 
 # Prepare the model
 model = ResNet50MultiLabel({
