@@ -16,7 +16,7 @@ train_dataset, test_dataset = prepare_data(config)
 
 # Prepare the model
 model = ResNet50MultiLabel({
-    "num_classes": 60,  # Assuming 60 classes, change if different
+    "num_classes": 60, 
     "learning_rate": config["m_learning_rate"],
     "pretrained": config["m_pretrained"],
     "threshold": config["m_threshold"],
