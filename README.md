@@ -35,4 +35,4 @@ Follow the instruction to install the aitlas.
 **Brazilian Coffee Scenes:**
 1. To perform EDA, use 'BrazilianCoffeeEDA.ipynb' in the 'notebooks' folder. This shows the distribution of the data.
 2. Once EDA is complete, use our analysis notebook.
-  * 'CoffeeScenesAnalysis.ipynb' is located in the 'notebooks' folder. This is set up to perform our baseline model and analysis, but can be modified by uncommenting code lines in the code related to modifying bands of the image.
+  * 'CoffeeScenesAnalysis.ipynb' is located in the 'notebooks' folder. This is set up to perform our baseline model and analysis, but can be modified by uncommenting code lines in the code related to modifying bands of the image. We are working on making this more reproducible by splitting it into .py files.
