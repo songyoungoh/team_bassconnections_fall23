@@ -4,7 +4,7 @@ from aitlas.transforms import ResizeCenterCropFlipHVToTensor, ResizeCenterCropTo
 from aitlas.utils import image_loader
 import sys
 import contextlib
-from datetime import datetime
+import yaml
 
 train_dataset_config = {
     "batch_size": 64,
