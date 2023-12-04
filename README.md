@@ -17,7 +17,7 @@ Follow the instruction to install the aitlas.
 
 ## Usage
 **mlrsnet:**
-1. To do EDA, use 'eda.ipynb' in the 'notebooks' folder. This would give you a good sense of the mlrsnet data.
+1. To do EDA, use 'mlrsnet_eda.ipynb' in the 'notebooks' folder. This would give you a good sense of the mlrsnet data.
 2. After doing EDA, use python files in 'src' folder to train and evaluate a model.
    * m_data.py: This file is to read the dataset from the given specified directory and return dataloaders along with dataset sizes.
    * m_model.py: This file is to prepare the model
