@@ -15,14 +15,7 @@ with open('../config.yaml') as p:
 train_dataset, test_dataset = prepare_data(config)
 
 # Prepare the model
-model = ResNet50MultiLabel({
-    "num_classes": 60, 
-    "learning_rate": config["m_learning_rate"],
-    "pretrained": config["m_pretrained"],
-    "threshold": config["m_threshold"],
-    "metrics": config["m_metrics"]
-})
-model.prepare()
+model = prepare_model(config)
 
 # Train and evaluate model
 model.train_and_evaluate_model(
