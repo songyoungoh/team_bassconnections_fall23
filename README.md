@@ -7,6 +7,10 @@ We are Bass Connections Team working on tracking climate change with satellites 
 MLRSNet provides different perspectives of the world captured from satellites. That is, it is composed of high spatial resolution optical satellite images. MLRSNet contains 109,161 remote sensing images that are annotated into 46 categories, and the number of sample images in a category varies from 1,500 to 3,000. The images have a fixed size of 256×256 pixels with various pixel resolutions (~10m to 0.1m). Moreover, each image in the dataset is tagged with several of 60 predefined class labels, and the number of labels associated with each image varies from 1 to 13.
 In the data folder, we provided our train, validation, test split CSV file
 
+**Brazilian Coffee Scenes: http://patreo.dcc.ufmg.br/2017/11/12/brazilian-coffee-scenes-dataset/**
+
+The Brazilian Coffee Scenes dataset is a set of satellite images taken from four counties in the State of Minas Gerais, Brazil - Arceburgo, Guaranesia, Guaxupé and Monte Santo - in 2005. There are two classes of images: Coffee (an image with at least 85% of coffee pixels) and Non-Coffee (an image with less than 10% of coffee pixels). There are 2,876 tiles of 64x64 pixels. The dataset is originally formatted as containing 5 folds with equal splits of Coffee and Non-Coffee images, but our work combines these folds into one set of images that we split into test and training sets. In the data folder, we provide the zip file of images and .txt files with the labels for each image.
+
 ## Requirements
 **mlrsnet:**
 
