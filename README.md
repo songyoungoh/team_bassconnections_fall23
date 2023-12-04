@@ -31,3 +31,8 @@ Follow the instruction to install the aitlas.
    * m_test_different_size.py: This file is to train the model with data size from 500 to 65000 to test the influence of data size on the deep learning model performance.
 4. Makefile: mrlsnet_Train_baseline: train and test the baseline.
 5. Makefile: mrlsnet_Train_with_different_data_size: train the model by different data sizes.
+
+**Brazilian Coffee Scenes:**
+1. To perform EDA, use 'BrazilianCoffeeEDA.ipynb' in the 'notebooks' folder. This shows the distribution of the data.
+2. Once EDA is complete, use our analysis notebook.
+  * 'CoffeeScenesAnalysis.ipynb' is located in the 'notebooks' folder. This is set up to perform our baseline model and analysis, but can be modified by uncommenting code lines in the code related to modifying bands of the image.
