@@ -1,4 +1,13 @@
-data_dir: Train_Test_Splits
-results_dir: results/
-figure_dir: reports/figures/
-file_id: 1nRf0ta_eARKkgXo2YFl2XqHGS0L72iEo
+# config about the data
+
+"batch_size": 64,
+"shuffle": True,
+"num_workers": 4,
+"data_dir": "/data/scratch/public/mlrsnet/data/Images",
+"csv_file": "/data/scratch/public/mlrsnet/data/mlrsnet_train.csv"
+
+# config about the model
+"learning_rate": 0.0001,
+"pretrained": true,
+"threshold": 0.5,
+"metrics": ["accuracy", "precision", "recall", "f1_score"]
