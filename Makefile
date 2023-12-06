@@ -9,7 +9,7 @@ mlrsnet_Download:
 	@cd $(CLONE_PATH) && git clone $(REPO_URL)
 	@echo "Unraring files..."
 	@python src/unrar.py CLONE_PATH
-	# @cd $(CLONE_PATH)/MLRSNet/Images && for file in *.rar; do unrar e "$$file"; done
+	@cd $(CLONE_PATH)/MLRSNet/Images && for file in *.rar; do unrar e "$$file"; done
 
 mrlsnet_Train_baseline:
 	@echo "Running baseline training..."
