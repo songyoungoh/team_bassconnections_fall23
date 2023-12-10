@@ -11,6 +11,10 @@ In the data folder, we provided our train, validation, test split CSV file
 
 The Brazilian Coffee Scenes dataset is a set of satellite images taken from four counties in the State of Minas Gerais, Brazil - Arceburgo, Guaranesia, Guaxupé and Monte Santo - in 2005. There are two classes of images: Coffee (an image with at least 85% of coffee pixels) and Non-Coffee (an image with less than 10% of coffee pixels). There are 2,876 tiles of 64x64 pixels. The dataset is originally formatted as containing 5 folds with equal splits of Coffee and Non-Coffee images, but our work combines these folds into one set of images that we split into test and training sets. In the data folder, we provide the zip file of images and .txt files with the labels for each image.
 
+** FloodNet: https://github.com/BinaLab/FloodNet-Challenge-EARTHVISION2021**
+
+FloodNet is a high-resolution aerial imagery dataset created to enhance post-flood scene understanding. The dataset aims at promoting accurate, timely, and comprehensible information provision, which is crucial for effective disaster management. The FloodNet dataset covers areas affected by Hurricane Harvey, as the high-resolution imagery was captured post the hurricane event using a small UAV platform, DJI Mavic Pro quadcopters. Total images: 2343 (Training: 1445, Validation: 450, Testing: 448) dimensions of 3000 × 4000 × 3.
+
 ## Requirements
 **MLRSNet:**
 
